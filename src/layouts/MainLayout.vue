@@ -2,96 +2,83 @@
   <q-layout view="hHh Lpr fff">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          :icon="leftDrawerOpen ? 'menu_open' : 'menu'"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <div
+          class="q-pa-xm fit row wrap justify-between items-center content-start"
+        >
+          <q-img
+            src="https://deserv.com.br/wp-content/uploads/2022/06/Logos_Deserves-2-3.png"
+            alt="DeServ Logo"
+            :height="$q.platform.is.mobile ? '20%' : '10%'"
+            :width="$q.platform.is.mobile ? '20%' : '10%'"
+            clickable
+          />
 
-        <q-toolbar-title> Halan's Projects </q-toolbar-title>
+          <q-tabs dense no-caps v-if="!$q.platform.is.mobile">
+            <q-tab name="Produtos" label="Produtos" />
+            <q-tab name="Sobre" label="Sobre" />
+            <q-tab name="Contato" label="Contato" />
+          </q-tabs>
 
-        <q-tabs>
-          <q-tab name="Produtos" label="Produtos" />
-          <q-tab name="Treinamentos" label="Treinamentos" />
-          <q-tab name="Sobre" label="Sobre" />
-          <q-tab name="Contatos" label="Contatos" />
-        </q-tabs>
+          <q-btn-dropdown
+            dropdown-icon="menu_open"
+            flat
+            v-if="$q.platform.is.mobile"
+          >
+            <q-list class="bg-grey-2">
+              <q-item clickable @click="onItemClick()">
+                <q-item-section>
+                  <q-item-label>Produtos</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-item clickable @click="onItemClick()">
+                <q-item-section>
+                  <q-item-label>Sobre</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-item clickable @click="onItemClick()">
+                <q-item-section>
+                  <q-item-label>Contato</q-item-label>
+                </q-item-section>
+              </q-item>
+
+            </q-list>
+          </q-btn-dropdown>
+        </div>
       </q-toolbar>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
 
-    <q-footer
-      ><q-tabs>
-        <q-tab name="whatsapp" icon="fa-brands fa-whatsapp" label="WhatsApp" />
-        <q-tab
-          name="instagram"
-          icon="fa-brands fa-instagram"
-          label="Instagram"
-        />
-        <q-tab
-          name="youTube"
-          icon="fa-brands fa-youtube"
-          label="YouTube"
-        /> </q-tabs
-    ></q-footer>
+    <q-footer class="q-pa-md">
+      <p class="flex flex-center">E-mail: halannalah@gmail.com</p>
+      <p class="flex flex-center">Telefone: (51) 9 9019-3912</p>
+      <q-tabs class="q-pa-md">
+        <q-tab name="facebook" icon="fa-brands fa-facebook" />
+        <q-tab name="instagram" icon="fa-brands fa-instagram" />
+        <q-tab name="github" icon="fa-brands fa-github" />
+        <q-tab name="linkedin" icon="fa-brands fa-linkedin" />
+      </q-tabs>
+      <p class="flex flex-center">
+        Oliveira Software © 2023 | Todos os direitos reservados.
+      </p>
+    </q-footer>
   </q-layout>
 </template>
 
 <script>
 import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
-
-const linksList = [
-  {
-    title: "Github",
-    caption: "github.com/HalanRFOliveira",
-    icon: "fa-brands fa-github",
-    link: "https://github.com/HalanRFOliveira",
-  },
-  {
-    title: "LinkedIn",
-    caption: "in/oliveirahalan",
-    icon: "fa-brands fa-linkedin",
-    link: "https://www.linkedin.com/in/oliveirahalan",
-  },
-  {
-    title: "Instagram",
-    caption: "instagram/halan_oliveira",
-    icon: "fa-brands fa-instagram",
-    link: "https://www.instagram.com/halan_oliveira",
-  },
-];
 
 export default defineComponent({
   name: "MainLayout",
-
-  components: {
-    EssentialLink,
-  },
 
   setup() {
     const leftDrawerOpen = ref(false);
 
     return {
-      essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
