@@ -3,15 +3,9 @@
     <q-header elevated>
       <q-toolbar>
         <div
-          class="q-pa-xm fit row wrap justify-between items-center content-start"
+          class="q-pa-xm fit row justify-between items-center"
         >
-          <q-img
-            src="https://deserv.com.br/wp-content/uploads/2022/06/Logos_Deserves-2-3.png"
-            alt="DeServ Logo"
-            :height="$q.platform.is.mobile ? '20%' : '10%'"
-            :width="$q.platform.is.mobile ? '20%' : '10%'"
-            clickable
-          />
+          <span class="text-h6">Oliveira Software</span>
 
           <q-tabs dense no-caps v-if="!$q.platform.is.mobile">
             <q-tab name="Produtos" label="Produtos" />
