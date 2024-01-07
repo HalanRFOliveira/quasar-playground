@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view class="bg-dark"/>
 </template>
 
 <script>
@@ -9,3 +9,6 @@ export default defineComponent({
   name: 'App'
 })
 </script>
+
+<style>
+</style>
