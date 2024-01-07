@@ -7,7 +7,7 @@
           size="50px"
           >
             <img
-              src="../../public/images/h-logo.png"
+              src="images/h-logo.png"
               alt="Halan Logo"
             />
           </q-avatar>

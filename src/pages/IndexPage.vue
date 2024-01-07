@@ -6,7 +6,7 @@
           Halan <br />
           Oliveira
         </h1>
-        <span class="text-white">Full-Stack Developer</span>
+        <span class="text-grey">Fullstack Developer</span>
         <div class="flex flex-center q-pa-md">
           <q-btn
             class="q-pa-sm"
@@ -14,12 +14,12 @@
             href="https://wa.me/+5551990193912"
             size="md"
             flat
-            color="white"
+            color="grey"
             icon="fa-brands fa-whatsapp"
           />
           <q-btn
             class="q-pa-sm"
-            color="white"
+            color="grey"
             target="_blank"
             href="https://instagram.com/halan_oliveira"
             size="md"
@@ -28,7 +28,7 @@
           />
           <q-btn
             class="q-pa-sm"
-            color="white"
+            color="grey"
             target="_blank"
             href="https://github.com/HalanRFOliveira"
             size="md"
@@ -37,7 +37,7 @@
           />
           <q-btn
             class="q-pa-sm"
-            color="white"
+            color="grey"
             target="_blank"
             href="https://linkedin.com/in/oliveirahalan"
             size="md"
@@ -48,10 +48,7 @@
       </div>
       <div class="q-pa-md col-md-6 row justify-center">
         <q-avatar color="secondary" size="300px">
-          <img
-            src="../../public/images/halan-img.png"
-            alt="Foto de Halan Oliveira"
-          />
+          <img src="images/halan-img.png" alt="Foto de Halan Oliveira" />
         </q-avatar>
       </div>
       <div class="q-pa-md col-md-2 row">
@@ -125,8 +122,148 @@
       </q-card>
     </div>
     <q-separator dark inset class="q-ma-xl" />
-    <div class="flex flex-center">
-      <h2 class="text-h3 text-white">Trabalhos e projetos</h2>
+    <div class="row wrap flex-center">
+      <h2 class="col-12 text-center text-h3 text-white">
+        Trabalhos e projetos
+      </h2>
+      <div class="row col-12 justify-center">
+        <q-card clickable class="q-ma-sm col-3 row" flat dark bordered>
+          <q-img class="rounded-borders" src="images/carflip-home.png">
+            <div class="absolute-bottom text-subtitle1 text-left">
+              <span class="text-h6">Precificador Carflip</span>
+            </div>
+          </q-img>
+          <q-card-section>
+            <span class="text-caption text-grey text-left">
+              Aplicação frontend consumindo uma API completa, que faz
+              precificação de veículos considerando a fipe atualizada
+              mensalmente.
+            </span>
+            <span class="row q-my-md col-12 text-caption text-grey text-center">
+              Usuários * Orçamentos * Atividades * Dashboard
+            </span>
+          </q-card-section>
+        </q-card>
+        <q-card clickable class="q-ma-sm col-3 row" flat dark bordered>
+          <q-img class="rounded-borders" src="images/swagger.png">
+            <div class="absolute-bottom text-subtitle1 text-left">
+              <span class="text-h6">API Precificador</span>
+            </div>
+          </q-img>
+          <q-card-section>
+            <span class="text-caption text-grey text-left">
+              Web API criada em .NET e documentada com swagger. Utilizada em
+              diversas aplicações em mais de três empresas diferentes
+            </span>
+            <span class="row text-center q-my-md col-12 text-caption text-grey">
+              Login * Regras * Emails * Cálculos
+            </span>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+    <q-separator dark inset class="q-ma-xl" />
+    <div class="text-center">
+      <h2 class="q-pa-md col-12 text-h3 text-white">
+        Tecnologias e Habilidades
+      </h2>
+      <span class="col-12 text-white">
+        Tecnologias que utilizo no dia a dia
+      </span>
+      <div class="row justify-center">
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-vuejs"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-square-js"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-solid fa-database"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-square-git"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-aws"
+          color="grey"
+        />
+      </div>
+      <div class="q-pa-md row justify-center">
+        <span class="col-12 text-white">
+          Outras tecnnologias que já utilizei em projetos
+        </span>
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-python"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-square-js"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-solid fa-database"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-square-git"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-aws"
+          color="grey"
+        />
+      </div>
+    </div>
+    <q-separator dark inset class="q-ma-xl" />
+    <div class="row q-pb-md text-center justify-center">
+      <h2 class="col-12 text-h3 text-white">Vamos Conversar!</h2>
+      <div class="q-pb-xl">
+        <q-btn
+          target="_blank"
+          href="https://wa.me/+5551990193912"
+          class="col-3"
+          outline
+          rounded
+          no-caps
+          color="green-13"
+          label="Vamos conversar"
+          icon="fa-brands fa-whatsapp"
+        />
+        <q-btn
+          target="_blank"
+          href="mailto:halannalah@gmail.com"
+          class="col-3"
+          flat
+          no-caps
+          color="grey"
+          label="Email: halannalah@gmail.com"
+          icon="fa-regular fa-paper-plane"
+        />
+      </div>
     </div>
   </q-page>
 </template>
