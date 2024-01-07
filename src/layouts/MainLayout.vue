@@ -1,16 +1,21 @@
 <template>
   <q-layout view="hHh Lpr fff">
-    <q-header elevated>
+    <q-header reveal elevated class="q-ma-md bg-secondary rounded-borders">
       <q-toolbar>
-        <div
-          class="q-pa-xm fit row justify-between items-center"
-        >
-          <span class="text-h6">Oliveira Software</span>
+        <div class="q-pa-xm fit row justify-between items-center">
+          <q-avatar
+          size="50px"
+          >
+            <img
+              src="images/h-logo.png"
+              alt="Halan Logo"
+            />
+          </q-avatar>
 
           <q-tabs dense no-caps v-if="!$q.platform.is.mobile">
-            <q-tab name="Produtos" label="Produtos" />
-            <q-tab name="Sobre" label="Sobre" />
-            <q-tab name="Contato" label="Contato" />
+            <q-route-tab to="/" name="home" label="Home" />
+            <q-route-tab to="/about" name="sobre" label="Sobre" />
+            <q-route-tab to="contacts" name="contato" label="Contato" />
           </q-tabs>
 
           <q-btn-dropdown
@@ -36,7 +41,6 @@
                   <q-item-label>Contato</q-item-label>
                 </q-item-section>
               </q-item>
-
             </q-list>
           </q-btn-dropdown>
         </div>
@@ -47,15 +51,41 @@
       <router-view />
     </q-page-container>
 
-    <q-footer class="q-pa-md">
-      <p class="flex flex-center">E-mail: halannalah@gmail.com</p>
-      <p class="flex flex-center">Telefone: (51) 9 9019-3912</p>
-      <q-tabs class="q-pa-md">
-        <q-tab name="facebook" icon="fa-brands fa-facebook" />
-        <q-tab name="instagram" icon="fa-brands fa-instagram" />
-        <q-tab name="github" icon="fa-brands fa-github" />
-        <q-tab name="linkedin" icon="fa-brands fa-linkedin" />
-      </q-tabs>
+    <q-footer class="q-pa-md bg-secondary">
+      <div class="flex flex-center q-pa-md">
+        <q-btn
+          class="q-pa-sm"
+          target="_blank"
+          href="https://wa.me/+5551990193912"
+          size="md"
+          flat
+          icon="fa-brands fa-whatsapp"
+        />
+        <q-btn
+          class="q-pa-sm"
+          target="_blank"
+          href="https://instagram.com/halan_oliveira"
+          size="md"
+          flat
+          icon="fa-brands fa-instagram"
+        />
+        <q-btn
+          class="q-pa-sm"
+          target="_blank"
+          href="https://github.com/HalanRFOliveira"
+          size="md"
+          flat
+          icon="fa-brands fa-github"
+        />
+        <q-btn
+          class="q-pa-sm"
+          target="_blank"
+          href="https://linkedin.com/in/oliveirahalan"
+          size="md"
+          flat
+          icon="fa-brands fa-linkedin"
+        />
+      </div>
       <p class="flex flex-center">
         Oliveira Software © 2023 | Todos os direitos reservados.
       </p>
