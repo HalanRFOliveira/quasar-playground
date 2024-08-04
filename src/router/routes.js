@@ -1,33 +1,45 @@
-
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    path: "/login",
+    component: () => import("layouts/LoginLayout.vue"),
+    meta: { requiresAuth: false },
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
-    ]
+      {
+        path: "",
+        name: "login",
+        component: () => import("pages/LoginPage.vue"),
+      }
+    ],
   },
   {
-    path: '/about',
-    component: () => import('layouts/MainLayout.vue'),
+    path: "/",
+    component: () => import("layouts/MainLayout.vue"),
+    meta: { requiresAuth: true },
     children: [
-      { path: '/about', component: () => import('pages/About/About.vue') }
-    ]
-  },
-  {
-    path: '/contacts',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [
-      { path: '/contacts', component: () => import('pages/ContactUs/ContactUs.vue') }
-    ]
+      {
+        path: "",
+        name: "home",
+        component: () => import("pages/IndexPage.vue"),
+      },
+      {
+        path: "/about",
+        name: "about",
+        component: () => import("pages/About/About.vue"),
+      },
+      {
+        path: "/contacts",
+        component: () => import("pages/ContactUs/ContactUs.vue"),
+        name: "contact"
+      },
+    ],
   },
 
   // Always leave this as last one,
   // but you can also remove it
   {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
-  }
-]
+    path: "/:catchAll(.*)*",
+    component: () => import("pages/ErrorNotFound.vue"),
+  },
+];
 
-export default routes
+export default routes;

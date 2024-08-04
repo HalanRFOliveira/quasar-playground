@@ -2,12 +2,12 @@
   <q-page>
     <div class="q-pa-xl row flex-center justify-around">
       <div class="q-ma-sm col-2 flex justify-center">
-        <h1 class="q-my-sm text-white text-weight-regular text-center">
+        <div class="q-my-sm text-h2 text-white text-weight-regular text-center">
           Halan <br />
           Oliveira
-        </h1>
+        </div>
         <span class="text-grey">Fullstack Developer</span>
-        <div class="flex flex-center q-pa-md">
+        <div class="row no-wrap flex-center q-pa-md">
           <q-btn
             class="q-pa-sm"
             target="_blank"
@@ -47,15 +47,16 @@
         </div>
       </div>
       <div class="q-pa-md col-md-6 row justify-center">
-        <q-avatar color="secondary" size="300px">
-          <img src="images/halan-img.png" alt="Foto de Halan Oliveira" />
+        <q-avatar color="secondary" size="300px" class="avatar-image">
+          <img src="images/halan-img.jpg" alt="Foto de Halan Oliveira" />
         </q-avatar>
       </div>
       <div class="q-pa-md col-md-2 row">
         <q-btn
-          class="col-12"
+          class="col-12 q-ma-sm"
           no-caps
           flat
+          rounded
           color="grey-1"
           label="Baixar PDF"
           icon-right="download"
@@ -64,7 +65,7 @@
         <q-btn
           target="_blank"
           href="https://wa.me/+5551990193912"
-          class="col-12"
+          class="col-12 q-ma-sm"
           outline
           rounded
           no-caps
@@ -127,13 +128,16 @@
         Trabalhos e projetos
       </h2>
       <div class="row col-12 justify-center">
-        <q-card clickable class="q-ma-sm col-3 row" flat dark bordered>
-          <q-img class="rounded-borders" src="images/carflip-home.png">
-            <div class="absolute-bottom text-subtitle1 text-left">
-              <span class="text-h6">Precificador Carflip</span>
-            </div>
-          </q-img>
+        <q-card
+          @click="toURL('https://precificador.carflip.com.br/')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
+          flat
+          dark
+          bordered
+        >
+          <q-img class="rounded-borders" src="images/carflip-home.png"/>
           <q-card-section>
+            <div class="text-h6">Precificador Carflip</div>
             <span class="text-caption text-grey text-left">
               Aplicação frontend consumindo uma API completa, que faz
               precificação de veículos considerando a fipe atualizada
@@ -144,13 +148,16 @@
             </span>
           </q-card-section>
         </q-card>
-        <q-card clickable class="q-ma-sm col-3 row" flat dark bordered>
-          <q-img class="rounded-borders" src="images/swagger.png">
-            <div class="absolute-bottom text-subtitle1 text-left">
-              <span class="text-h6">API Precificador</span>
-            </div>
-          </q-img>
+        <q-card
+          @click="toURL('https://api-precificador.carflip.com.br/api/index.html')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
+          flat
+          dark
+          bordered
+        >
+          <q-img class="rounded-borders" src="images/swagger.png"/>
           <q-card-section>
+            <div class="text-h6">API Precificador</div>
             <span class="text-caption text-grey text-left">
               Web API criada em .NET e documentada com swagger. Utilizada em
               diversas aplicações em mais de três empresas diferentes
@@ -202,41 +209,6 @@
           color="grey"
         />
       </div>
-      <div class="q-pa-md row justify-center">
-        <span class="col-12 text-white">
-          Outras tecnnologias que já utilizei em projetos
-        </span>
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-python"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-square-js"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-solid fa-database"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-square-git"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-aws"
-          color="grey"
-        />
-      </div>
     </div>
     <q-separator dark inset class="q-ma-xl" />
     <div class="row q-pb-md text-center justify-center">
@@ -245,7 +217,7 @@
         <q-btn
           target="_blank"
           href="https://wa.me/+5551990193912"
-          class="col-3"
+          class="col-3 q-ma-sm"
           outline
           rounded
           no-caps
@@ -256,7 +228,7 @@
         <q-btn
           target="_blank"
           href="mailto:halannalah@gmail.com"
-          class="col-3"
+          class="col-3 q-ma-sm"
           flat
           no-caps
           color="grey"
@@ -270,11 +242,29 @@
 
 <script>
 import { defineComponent } from "vue";
+import { openURL } from 'quasar'
+
 
 export default defineComponent({
   name: "IndexPage",
-  setup() {},
+  setup() {
+    const toURL = (url) => {
+      openURL(url);
+
+    };
+
+    return {
+      toURL
+    }
+  },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.avatar-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
