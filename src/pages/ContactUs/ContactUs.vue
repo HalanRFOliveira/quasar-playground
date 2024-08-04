@@ -1,15 +1,10 @@
 <template>
-    <h1>Ainda está vazia!</h1>
-    <h1>Contact Us</h1>
+  <p class="q-pa-xl text-white">
+    <strong>Current route path:</strong> {{ $route.fullPath }}
+  </p>
 </template>
 
-<script>
-export default {
-  name: "ContactUsPage"
+<script setup>
+import { Utils } from 'src/components/utils/utils';
 
-}
 </script>
-
-<style>
-
-</style>
