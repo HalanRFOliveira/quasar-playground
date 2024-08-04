@@ -8,42 +8,14 @@
         </div>
         <span class="text-grey">Fullstack Developer</span>
         <div class="row no-wrap flex-center q-pa-md">
-          <q-btn
-            class="q-pa-sm"
-            target="_blank"
-            href="https://wa.me/+5551990193912"
-            size="md"
-            flat
-            color="grey"
-            icon="fa-brands fa-whatsapp"
-          />
-          <q-btn
-            class="q-pa-sm"
-            color="grey"
-            target="_blank"
-            href="https://instagram.com/halan_oliveira"
-            size="md"
-            flat
-            icon="fa-brands fa-instagram"
-          />
-          <q-btn
-            class="q-pa-sm"
-            color="grey"
-            target="_blank"
-            href="https://github.com/HalanRFOliveira"
-            size="md"
-            flat
-            icon="fa-brands fa-github"
-          />
-          <q-btn
-            class="q-pa-sm"
-            color="grey"
-            target="_blank"
-            href="https://linkedin.com/in/oliveirahalan"
-            size="md"
-            flat
-            icon="fa-brands fa-linkedin"
-          />
+          <q-btn class="q-pa-sm" target="_blank" href="https://wa.me/+5551990193912" size="md" flat color="grey"
+            icon="fa-brands fa-whatsapp" />
+          <q-btn class="q-pa-sm" color="grey" target="_blank" href="https://instagram.com/halan_oliveira" size="md" flat
+            icon="fa-brands fa-instagram" />
+          <q-btn class="q-pa-sm" color="grey" target="_blank" href="https://github.com/HalanRFOliveira" size="md" flat
+            icon="fa-brands fa-github" />
+          <q-btn class="q-pa-sm" color="grey" target="_blank" href="https://linkedin.com/in/oliveirahalan" size="md" flat
+            icon="fa-brands fa-linkedin" />
         </div>
       </div>
       <div class="q-pa-md col-md-6 row justify-center">
@@ -52,27 +24,10 @@
         </q-avatar>
       </div>
       <div class="q-pa-md col-md-2 row">
-        <q-btn
-          class="col-12 q-ma-sm"
-          no-caps
-          flat
-          rounded
-          color="grey-1"
-          label="Baixar PDF"
-          icon-right="download"
-          size="sm"
-        />
-        <q-btn
-          target="_blank"
-          href="https://wa.me/+5551990193912"
-          class="col-12 q-ma-sm"
-          outline
-          rounded
-          no-caps
-          color="green-13"
-          label="Vamos conversar"
-          icon="fa-brands fa-whatsapp"
-        />
+        <q-btn class="col-12 q-ma-sm" no-caps flat rounded color="grey-1" label="Baixar PDF" icon-right="download"
+          size="sm" />
+        <q-btn target="_blank" href="https://wa.me/+5551990193912" class="col-12 q-ma-sm" outline rounded no-caps
+          color="green-13" label="Vamos conversar" icon="fa-brands fa-whatsapp" />
       </div>
     </div>
     <q-separator dark inset class="q-ma-xl" />
@@ -82,10 +37,8 @@
           <q-avatar icon="fa-solid fa-code" />
         </q-card-section>
         <q-card-section>
-          <span class="text-h6 text-weight-regular"
-            >2 anos como <br />
-            <span class="text-weight-bold">Programador</span></span
-          >
+          <span class="text-h6 text-weight-regular">2 anos como <br />
+            <span class="text-weight-bold">Programador</span></span>
         </q-card-section>
       </q-card>
       <q-card bordered flat dark class="q-ma-lg text-center">
@@ -93,10 +46,8 @@
           <q-avatar icon="fa-solid fa-code-branch" />
         </q-card-section>
         <q-card-section>
-          <span class="text-h6 text-weight-regular"
-            >3 anos como <br />
-            <span class="text-weight-bold">Designer</span></span
-          >
+          <span class="text-h6 text-weight-regular">3 anos como <br />
+            <span class="text-weight-bold">Designer</span></span>
         </q-card-section>
       </q-card>
     </div>
@@ -128,14 +79,9 @@
         Trabalhos e projetos
       </h2>
       <div class="row col-12 justify-center">
-        <q-card
-          @click="toURL('https://precificador.carflip.com.br/')"
-          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
-          flat
-          dark
-          bordered
-        >
-          <q-img class="rounded-borders" src="images/carflip-home.png"/>
+        <q-card @click="toURL('https://precificador.carflip.com.br/')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row" flat dark bordered>
+          <q-img class="rounded-borders" src="images/carflip-home.png" />
           <q-card-section>
             <div class="text-h6">Precificador Carflip</div>
             <span class="text-caption text-grey text-left">
@@ -148,14 +94,9 @@
             </span>
           </q-card-section>
         </q-card>
-        <q-card
-          @click="toURL('https://api-precificador.carflip.com.br/api/index.html')"
-          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
-          flat
-          dark
-          bordered
-        >
-          <q-img class="rounded-borders" src="images/swagger.png"/>
+        <q-card @click="toURL('https://api-precificador.carflip.com.br/api/index.html')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row" flat dark bordered>
+          <q-img class="rounded-borders" src="images/swagger.png" />
           <q-card-section>
             <div class="text-h6">API Precificador</div>
             <span class="text-caption text-grey text-left">
@@ -167,6 +108,21 @@
             </span>
           </q-card-section>
         </q-card>
+        <q-card @click="toURL('https://sistemaskrause.azurewebsites.net')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row" flat dark bordered>
+          <q-img class="rounded-borders" src="images/krause-login.png" />
+          <q-card-section>
+            <div class="text-h6">Sistemas Krause</div>
+            <span class="text-caption text-grey text-left">
+              Aplicação frontend consumindo duas APIs, que monta um boleto com os dados enviados e devolve um PDF do
+              arquivo.
+            </span>
+            <span class="row text-center q-my-md col-12 text-caption text-grey">
+              Login * Tabela * Emissão de documento
+            </span>
+          </q-card-section>
+        </q-card>
+
       </div>
     </div>
     <q-separator dark inset class="q-ma-xl" />
@@ -178,63 +134,21 @@
         Tecnologias que utilizo no dia a dia
       </span>
       <div class="row justify-center">
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-vuejs"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-square-js"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-solid fa-database"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-square-git"
-          color="grey"
-        />
-        <q-icon
-          class="q-ma-md"
-          size="xl"
-          name="fa-brands fa-aws"
-          color="grey"
-        />
+        <q-icon class="q-ma-md" size="xl" name="fa-brands fa-vuejs" color="grey" />
+        <q-icon class="q-ma-md" size="xl" name="fa-brands fa-square-js" color="grey" />
+        <q-icon class="q-ma-md" size="xl" name="fa-solid fa-database" color="grey" />
+        <q-icon class="q-ma-md" size="xl" name="fa-brands fa-square-git" color="grey" />
+        <q-icon class="q-ma-md" size="xl" name="fa-brands fa-aws" color="grey" />
       </div>
     </div>
     <q-separator dark inset class="q-ma-xl" />
     <div class="row q-pb-md text-center justify-center">
       <h2 class="col-12 text-h3 text-white">Vamos Conversar!</h2>
       <div class="q-pb-xl">
-        <q-btn
-          target="_blank"
-          href="https://wa.me/+5551990193912"
-          class="col-3 q-ma-sm"
-          outline
-          rounded
-          no-caps
-          color="green-13"
-          label="Vamos conversar"
-          icon="fa-brands fa-whatsapp"
-        />
-        <q-btn
-          target="_blank"
-          href="mailto:halannalah@gmail.com"
-          class="col-3 q-ma-sm"
-          flat
-          no-caps
-          color="grey"
-          label="Email: halannalah@gmail.com"
-          icon="fa-regular fa-paper-plane"
-        />
+        <q-btn target="_blank" href="https://wa.me/+5551990193912" class="col-3 q-ma-sm" outline rounded no-caps
+          color="green-13" label="Vamos conversar" icon="fa-brands fa-whatsapp" />
+        <q-btn target="_blank" href="mailto:halannalah@gmail.com" class="col-3 q-ma-sm" flat no-caps color="grey"
+          label="Email: halannalah@gmail.com" icon="fa-regular fa-paper-plane" />
       </div>
     </div>
   </q-page>
