@@ -11,7 +11,7 @@
             <q-route-tab :to="{ name: 'home' }" name="home" label="Home" />
             <q-route-tab :to="{ name: 'about' }" name="sobre" label="Sobre" />
             <q-route-tab :to="{ name: 'contact' }" name="contato" label="Contato" />
-            <q-route-tab @click="store.logout()" :to="{ name: 'login' }" name="logout" label="Logout" class="text-red"/>
+            <q-route-tab @click="store.logout()" :to="{ name: 'login' }" name="logout" label="Logout" class="text-red" />
           </q-tabs>
 
           <q-btn-dropdown dropdown-icon="menu_open" flat class="mobile-only">
@@ -61,7 +61,7 @@
           icon="fa-brands fa-linkedin" />
       </div>
       <p class="flex flex-center">
-        Oliveira Software © {{ Utils.formatDate(dateNow, "YYYY") }} | Todos os direitos reservados.
+        Oliveira Software © {{ formatDate(dateNow, "YYYY") }} | Todos os direitos reservados.
       </p>
     </q-footer>
   </q-layout>
@@ -69,9 +69,10 @@
 
 <script setup>
 import { useAuthStore } from "src/stores/store.js";
-import { Utils } from "src/components/utils/utils";
+import { useUtils } from "src/composables/UseUtils";
 
 const store = useAuthStore();
+const { formatDate } = useUtils();
 const dateNow = new Date();
 
 </script>

@@ -1,13 +1,16 @@
 import { date } from "quasar";
 
-export const Utils = {
-  cpfRule: (val) => {
+export function useUtils() {
+  const cpfRule = (val) => {
     if (!validateCpf(val)) return `CPF inválido`;
-  },
-  formatDate(val, format) {
+  };
+
+  const formatDate = (val, format) => {
     return date.formatDate(val, format);
-  },
-};
+  };
+
+  return { cpfRule, formatDate };
+}
 
 const validateCpf = (cpf) => {
   if (!cpf || cpf.length == 0) return false;
