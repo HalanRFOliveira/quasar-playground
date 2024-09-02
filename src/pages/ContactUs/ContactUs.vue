@@ -2,6 +2,9 @@
   <p class="q-pa-xl text-white">
     <strong>Current route path:</strong> {{ $route.fullPath }}
   </p>
+  <p class="q-pa-xl text-white">
+    <strong>Welington</strong>
+  </p>
   <q-table title="Personagens" dark :dense="dense" :rows="data" :columns="columns" binary-state-sort
     class="q-pa-md q-ma-md bg-grey-10" flat style="border-radius: 20px;" v-model:pagination="pagination" row-key="id"
     :rows-per-page-options="[5, 10, 20]" bordered @request="loadData" ref="tableRef" :filter="filter" :loading="loading">
