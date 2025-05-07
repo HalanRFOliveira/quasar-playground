@@ -1,9 +1,6 @@
 <template>
-  <p class="q-pa-xl text-white">
-    <strong>Current route path:</strong> {{ $route.fullPath }}
-  </p>
-  <p class="q-pa-xl text-white">
-    <strong>Welington</strong>
+   <p class="q-pa-xl text-white">
+    <strong>Tabela para teste de consumo de API paginada</strong>
   </p>
   <q-table title="Personagens" dark :dense="dense" :rows="data" :columns="columns" binary-state-sort
     class="q-pa-md q-ma-md bg-grey-10" flat style="border-radius: 20px;" v-model:pagination="pagination" row-key="id"
@@ -19,12 +16,12 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import RickMortyApi from 'src/services/rick-mortyapiservice';
 import { usePagination } from '../../composables/UsePagination'
 
-const { pagination, filter, preparePaginationParams, getSlicedData } = usePagination();
-const loading = ref(false);
+const { pagination, loading, dense, filter, preparePaginationParams, getSlicedData, updatePagination } = usePagination();
+
 const tableRef = ref();
 const data = ref([]);
 const columns = ref([
@@ -64,33 +61,23 @@ const columns = ref([
     sortable: true
   },
   {
-    name: 'origin',
-    label: 'Origem',
+    name: 'status',
+    label: 'Status',
     align: 'left',
     field: 'status',
     sortable: true
   },
 ]);
 
-const dense = computed(() => { return pagination.value.rowsPerPage > 10 });
-
 async function loadData(props) {
-  const maxItemsPerPage = 20;
-  const { page, rowsPerPage, sortBy, descending, apiPage, params } = preparePaginationParams(props, maxItemsPerPage);
-
   loading.value = true;
+  const { page, rowsPerPage, sortBy, descending, apiPage, params } = preparePaginationParams(props);
 
   await RickMortyApi.characters.getAllCharacters(params)
     .then((resp) => {
-      const { rowsNumber, slicedData } = getSlicedData(resp, page, rowsPerPage, maxItemsPerPage, apiPage);
-
-      pagination.value.rowsNumber = rowsNumber;
+      const { rowsNumber, slicedData } = getSlicedData(resp, page, rowsPerPage, apiPage);
       data.value = slicedData;
-
-      pagination.value.page = page;
-      pagination.value.rowsPerPage = rowsPerPage;
-      pagination.value.sortBy = sortBy;
-      pagination.value.descending = descending;
+      updatePagination({ rowsNumber, page, rowsPerPage, sortBy, descending });
     })
     .finally(() => loading.value = false);
 };
