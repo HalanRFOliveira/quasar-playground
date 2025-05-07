@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 export function usePagination() {
   const pagination = ref({
@@ -17,14 +17,35 @@ export function usePagination() {
     gender: "",
   });
 
+  const loading = ref(false);
+  const maxItemsPerPage = 20;
+
+  const dense = computed(() => {
+    return pagination.value.rowsPerPage > 10;
+  });
+
+  /**
+   *
+   * @param {Object} newValues - Objeto com valores atualizados para paginação
+   */
+  const updatePagination = (newValues) => {
+    pagination.value = { ...pagination.value, ...newValues };
+  };
+
   /**
    * Prepara os parâmetros de paginação para a requisição à API.
+   *
    * @param {Object} props - Propriedades de paginação do componente.
-   * @param {number} maxItemsPerPage - Máximo de itens que a API pode retornar por página.
-   * @returns {Object} - Objeto contendo parâmetros de paginação.
+   * @returns - Objeto contendo parâmetros de paginação.
    */
-  const preparePaginationParams = (props, maxItemsPerPage) => {
-    const { page, rowsPerPage, sortBy, descending } = props.pagination;
+  const preparePaginationParams = (props) => {
+    const {
+      page = 1,
+      rowsPerPage = 5,
+      sortBy = "desc",
+      descending = false,
+    } = props.pagination || {};
+
     const apiPage = Math.ceil((page * rowsPerPage) / maxItemsPerPage);
     const params = { ...props.filter, page: apiPage };
 
@@ -33,27 +54,30 @@ export function usePagination() {
 
   /**
    * Fatia os dados da resposta da API com base nos parâmetros de paginação.
+   *
    * @param {Object} resp - Resposta da API contendo dados.
    * @param {number} page - Número da página atual.
    * @param {number} rowsPerPage - Número de linhas a serem exibidas por página.
-   * @param {number} maxItemsPerPage - Máximo de itens que a API pode retornar por página.
    * @param {number} apiPage - Página calculada da API.
-   * @returns {Object} - Objeto contendo dados fatiados e número de linhas.
+   * @returns - Objeto contendo dados fatiados e número de linhas.
    */
-  const getSlicedData = (resp, page, rowsPerPage, maxItemsPerPage, apiPage) => {
+  const getSlicedData = (resp, page, rowsPerPage, apiPage) => {
     const rowsNumber = resp.info.count;
     const apiOffset = (apiPage - 1) * maxItemsPerPage;
-    const start = (page - 1) * rowsPerPage - apiOffset;
+    const start = Math.max(0, (page - 1) * rowsPerPage - apiOffset);
     const end = start + rowsPerPage;
     const slicedData = resp.results.slice(start, end);
 
-    return { rowsNumber, slicedData, apiPage };
+    return { rowsNumber, slicedData };
   };
 
   return {
     pagination,
     filter,
+    dense,
+    loading,
     getSlicedData,
     preparePaginationParams,
+    updatePagination,
   };
 }

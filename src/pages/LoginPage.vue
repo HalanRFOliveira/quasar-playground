@@ -2,16 +2,38 @@
   <div class="absolute-center">
     <q-card class="bg-grey">
       <q-card-section class="flex flex-center">
-        <q-chip color="secondary" disable text-color="white" icon="event">
+        <q-chip
+          color="secondary"
+          disable
+          text-color="white"
+          icon="event"
+        >
           {{ formatDate(date, "DD/MM/YYYY - hh:mm:ss") }}
         </q-chip>
       </q-card-section>
       <q-card-section>
-        <q-form @submit="onSubmit" class="q-ma-md">
-          <q-input clearable color="primary" :rules="[cpfRule]" outlined v-model="form.cpf" type="text"
-            mask="###.###.###-##" unmasked-value label="CPF" class="q-ma-md full-width" />
-          <q-btn label="login" :loading="loading" color="primary" class="q-ma-md full-width" type="submit" rounded
-            size="md" />
+        <q-form
+          @submit="onSubmit"
+          class="q-ma-md"
+        >
+          <q-input
+            clearable
+            color="primary"
+            outlined
+            v-model="form.email"
+            type="email"
+            label="Email"
+            class="q-ma-md full-width"
+          />
+          <q-btn
+            label="login"
+            :loading="loading"
+            color="primary"
+            class="q-ma-md full-width"
+            type="submit"
+            rounded
+            size="md"
+          />
         </q-form>
       </q-card-section>
     </q-card>
@@ -27,8 +49,8 @@ import { useUtils } from 'src/composables/UseUtils';
 const store = useAuthStore();
 const router = useRouter();
 const route = useRoute();
-const { cpfRule, formatDate } = useUtils();
-const form = ref({ cpf: "" });
+const { formatDate } = useUtils();
+const form = ref({ email: "" });
 const date = ref(new Date());
 const loading = ref(false);
 

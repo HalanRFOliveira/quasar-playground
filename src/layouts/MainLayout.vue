@@ -9,8 +9,8 @@
 
           <q-tabs dense no-caps class="desktop-only">
             <q-route-tab :to="{ name: 'home' }" name="home" label="Home" />
-            <q-route-tab :to="{ name: 'about' }" name="sobre" label="Sobre" />
-            <q-route-tab :to="{ name: 'contact' }" name="contato" label="Contato" />
+            <!-- <q-route-tab :to="{ name: 'about' }" name="about" label="Sobre" /> -->
+            <q-route-tab :to="{ name: 'table' }" name="table" label="Tabela" />
             <q-route-tab @click="store.logout()" :to="{ name: 'login' }" name="logout" label="Logout" class="text-red" />
           </q-tabs>
 
@@ -22,15 +22,15 @@
                 </q-item-section>
               </q-item>
 
-              <q-item clickable to="/about">
+              <!-- <q-item clickable to="/about">
                 <q-item-section>
                   <q-item-label>Sobre</q-item-label>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
 
-              <q-item clickable to="/contacts">
+              <q-item clickable to="/table">
                 <q-item-section>
-                  <q-item-label>Contato</q-item-label>
+                  <q-item-label>Tabela</q-item-label>
                 </q-item-section>
               </q-item>
 
