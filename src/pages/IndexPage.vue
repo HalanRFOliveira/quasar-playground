@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="q-pa-xl row flex-center justify-around">
+    <div class="q-pa-xl row flex-center justify-center">
       <div class="q-ma-sm col-2 flex justify-center">
         <div class="q-my-sm text-h2 text-white text-weight-regular text-center">
           Halan <br />
@@ -21,11 +21,16 @@
             class="q-pa-sm"
             color="grey"
             target="_blank"
-            href="https://instagram.com/halan_oliveira"
+            href="https://vsco.co/halannalah"
             size="md"
             flat
-            icon="fa-brands fa-instagram"
-          />
+          >
+            <img
+              src="/icons/vsco-icon.png"
+              alt="VSCO"
+              style="width: 5dvh; height: 5dvh;"
+            />
+          </q-btn>
           <q-btn
             class="q-pa-sm"
             color="grey"
@@ -102,8 +107,8 @@
           <q-avatar icon="fa-solid fa-code" />
         </q-card-section>
         <q-card-section>
-          <span class="text-h6 text-weight-regular">3 anos como <br />
-            <span class="text-weight-bold">Programador</span></span>
+          <span class="text-h6 text-weight-regular">3 anos de <br />
+            <span class="text-weight-bold">Atuação Profissional</span></span>
         </q-card-section>
       </q-card>
       <q-card
@@ -116,8 +121,8 @@
           <q-avatar icon="fa-solid fa-code-branch" />
         </q-card-section>
         <q-card-section>
-          <span class="text-h6 text-weight-regular">3 anos como <br />
-            <span class="text-weight-bold">Designer</span></span>
+          <span class="text-h6 text-weight-regular">6 anos de <br />
+            <span class="text-weight-bold">Aprendizado Contínuo</span></span>
         </q-card-section>
       </q-card>
     </div>
@@ -129,20 +134,20 @@
       >
         <q-card-section>
           <h1 class="text-caption text-center text-weight-regular">
-            Desenvolvedor <br />
-            <span class="text-weight-bold text-h5">Full-Stack</span>
+            Entregas pontuais e <br />
+            <span class="text-weight-bold text-h5">Planejamento</span>
           </h1>
         </q-card-section>
         <q-card-section>
           <h1 class="text-caption text-center text-weight-regular">
-            Dezenas de projetos e <br />
-            <span class="text-weight-bold text-h5">Experiências</span>
+            Projetos e sistemas <br />
+            <span class="text-weight-bold text-h5">Robustos</span>
           </h1>
         </q-card-section>
         <q-card-section>
           <h1 class="text-caption text-center text-weight-regular">
-            Free lancer com <br />
-            <span class="text-weight-bold text-h5">WordPress</span>
+            Código limpo e<br />
+            <span class="text-weight-bold text-h5">Eficiente</span>
           </h1>
         </q-card-section>
       </q-card>
@@ -171,7 +176,7 @@
           <q-card-section>
             <div class="text-h6">Precificador Carflip</div>
             <span class="text-caption text-grey text-left">
-              Aplicação frontend consumindo uma API completa, que faz
+              Aplicação frontend consumindo uma API autoral, que faz
               precificação de veículos considerando a fipe atualizada
               mensalmente.
             </span>
@@ -180,7 +185,7 @@
             </span>
           </q-card-section>
         </q-card>
-        <q-card
+        <!-- <q-card
           @click="toURL('https://api-precificador.carflip.com.br/api/index.html')"
           class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
           flat
@@ -196,114 +201,138 @@
             <span class="text-caption text-grey text-left">
               Web API criada em .NET e documentada com swagger. Utilizada em
               diversas aplicações em mais de três empresas diferentes
-          </span>
-          <span class="row text-center q-my-md col-12 text-caption text-grey">
-            Login * Regras * Emails * Cálculos
-          </span>
-        </q-card-section>
-      </q-card>
-      <q-card
-        @click="toURL('https://sistemaskrause.azurewebsites.net')"
-        class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
-        flat
-        dark
-        bordered
-      >
-        <q-img
-          class="rounded-borders"
-          src="images/krause-login.png"
-        />
-        <q-card-section>
-          <div class="text-h6">Sistemas Krause</div>
-          <span class="text-caption text-grey text-left">
-            Aplicação frontend consumindo duas APIs, que monta um boleto com os dados enviados e devolve um PDF do
-            arquivo.
-          </span>
-          <span class="row text-center q-my-md col-12 text-caption text-grey">
-            Login * Tabela * Emissão de documento
-          </span>
-        </q-card-section>
-      </q-card>
+            </span>
+            <span class="row text-center q-my-md col-12 text-caption text-grey">
+              Login * Regras * Emails * Cálculos
+            </span>
+          </q-card-section>
+        </q-card> -->
+        <q-card
+          @click="toURL('https://gap.deserv.com.br')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
+          flat
+          dark
+          bordered
+        >
+          <q-img
+            class="rounded-borders"
+            src="images/gap-login.png"
+          />
+          <q-card-section>
+            <div class="text-h6">GAP Analysis</div>
+            <span class="text-caption text-grey text-left">
+              Aplicação frontend consumindo API autoral que faz o procedimento de consultoria para certificações ISO
+              27001, ISO 27701, LGPD, NIST, dentre outros.
+            </span>
+            <span class="row text-center q-my-md col-12 text-caption text-grey">
+              Formulários * Multi tenant * Relatórios * Evidências
+            </span>
+          </q-card-section>
+        </q-card>
+        <q-card
+          @click="toURL('https://sistemaskrause.azurewebsites.net')"
+          class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
+          flat
+          dark
+          bordered
+        >
+          <q-img
+            class="rounded-borders"
+            src="images/krause-login.png"
+          />
+          <q-card-section>
+            <div class="text-h6">Sistemas Krause</div>
+            <span class="text-caption text-grey text-left">
+              Aplicação frontend consumindo duas APIs, sendo uma autoral, que monta um boleto com os dados enviados e
+              devolve um PDF do
+              arquivo.
+            </span>
+            <span class="row text-center q-my-md col-12 text-caption text-grey">
+              Login * Tabela * Emissão de documento
+            </span>
+          </q-card-section>
+        </q-card>
 
+      </div>
     </div>
-  </div>
-  <q-separator
-    dark
-    inset
-    class="q-ma-xl"
-  />
-  <div class="text-center">
-    <h2 class="q-pa-md col-12 text-h3 text-white">
-      Tecnologias e Habilidades
-    </h2>
-    <span class="col-12 text-white">
-      Tecnologias que utilizo no dia a dia
-    </span>
-    <div class="row justify-center">
-      <q-icon
-        class="q-ma-md"
-        size="xl"
-        name="fa-brands fa-vuejs"
-        color="grey"
-      />
-      <q-icon
-        class="q-ma-md"
-        size="xl"
-        name="fa-brands fa-square-js"
-        color="grey"
-      />
-      <q-icon
-        class="q-ma-md"
-        size="xl"
-        name="fa-solid fa-database"
-        color="grey"
-      />
-      <q-icon
-        class="q-ma-md"
-        size="xl"
-        name="fa-brands fa-square-git"
-        color="grey"
-      />
-      <q-icon
-        class="q-ma-md"
-        size="xl"
-        name="fa-brands fa-aws"
-        color="grey"
-      />
+    <q-separator
+      dark
+      inset
+      class="q-ma-xl"
+    />
+    <div class="text-center">
+      <h2 class="q-pa-md col-12 text-h3 text-white">
+        Tecnologias e Habilidades
+      </h2>
+      <span class="col-12 text-white">
+        Tecnologias que utilizo no dia a dia
+      </span>
+      <div class="row justify-center">
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-vuejs"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-square-js"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-solid fa-database"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-square-git"
+          color="grey"
+        />
+        <q-icon
+          class="q-ma-md"
+          size="xl"
+          name="fa-brands fa-aws"
+          color="grey"
+        />
+      </div>
     </div>
-  </div>
-  <q-separator
-    dark
-    inset
-    class="q-ma-xl"
-  />
-  <div class="row q-pb-md text-center justify-center">
-    <h2 class="col-12 text-h3 text-white">Vamos Conversar!</h2>
-    <div class="q-pb-xl">
-      <q-btn
-        target="_blank"
-        href="https://wa.me/+5551990193912"
-        class="col-3 q-ma-sm"
-        outline
-        rounded
-        no-caps
-        color="green-13"
-        label="Vamos conversar"
-        icon="fa-brands fa-whatsapp"
-      />
-      <q-btn
-        target="_blank"
-        href="mailto:halannalah@gmail.com"
-        class="col-3 q-ma-sm"
-        flat
-        no-caps
-        color="grey"
-        label="Email: halannalah@gmail.com"
-        icon="fa-regular fa-paper-plane"
-      />
+    <q-separator
+      dark
+      inset
+      class="q-ma-xl"
+    />
+    <div class="row q-pb-md text-center justify-center">
+      <h2 class="col-12 text-h3 text-white">Vamos Conversar!</h2>
+      <div class="q-pb-xl">
+        <q-btn
+          target="_blank"
+          href="https://wa.me/+5551990193912"
+          class="col-3 q-ma-sm"
+          outline
+          rounded
+          no-caps
+          color="green-13"
+          label="Vamos conversar"
+          icon="fa-brands fa-whatsapp"
+        />
+        <q-btn
+          target="_blank"
+          href="mailto:halannalah@gmail.com"
+          class="col-3 q-ma-sm"
+          flat
+          no-caps
+          color="grey"
+          label="Email: halannalah@gmail.com"
+          icon="fa-regular fa-paper-plane"
+        />
+      </div>
     </div>
-  </div>
-</q-page></template>
+  </q-page>
+</template>
 
 <script>
 import { defineComponent } from "vue";
@@ -325,9 +354,11 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>.avatar-image img {
+<style scoped>
+.avatar-image img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-}</style>
+}
+</style>
 
