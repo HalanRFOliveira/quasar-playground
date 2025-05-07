@@ -48,15 +48,16 @@
 
 <script>
 import { defineComponent, onMounted, ref } from "vue";
-import { Utils } from "src/components/utils/utils";
+import { useUtils } from "src/composables/UseUtils";
 export default defineComponent({
   name: "AboutPage",
   setup() {
+    const { formatDate } = useUtils();
     const dateNow = ref();
 
     onMounted(() => {
       setInterval(() => {
-        dateNow.value = Utils.formatDate(Date.now(), "DD/MM/YYYY - hh:mm:ss");
+        dateNow.value = formatDate(Date.now(), "DD/MM/YYYY - hh:mm:ss");
       }, 1000);
     });
 
