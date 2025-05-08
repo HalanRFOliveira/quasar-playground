@@ -1,42 +1,36 @@
 <template>
-  <div class="absolute-center">
-    <q-card class="bg-grey">
-      <q-card-section class="flex flex-center">
-        <q-chip
-          color="secondary"
-          disable
-          text-color="white"
-          icon="event"
-        >
-          {{ formatDate(date, "DD/MM/YYYY - hh:mm:ss") }}
-        </q-chip>
-      </q-card-section>
-      <q-card-section>
-        <q-form
-          @submit="onSubmit"
-          class="q-ma-md"
-        >
-          <q-input
-            clearable
-            color="primary"
-            outlined
-            v-model="form.email"
-            type="email"
-            label="Email"
-            class="q-ma-md full-width"
-          />
-          <q-btn
-            label="login"
-            :loading="loading"
-            color="primary"
-            class="q-ma-md full-width"
-            type="submit"
-            rounded
-            size="md"
-          />
-        </q-form>
-      </q-card-section>
-    </q-card>
+  <div class="row absolute-center fit items-center justify-center">
+    <q-form @submit="onSubmit">
+      <div class="row">
+        <div class="row justify-center items-center col-xs-12 col-md-12 q-mb-lg q-pa-lg">
+          <q-card
+            class="bg-secondary q-px-xl overflow-auto"
+            bordered
+          >
+            <q-card-section class="flex flex-center">
+              <q-img
+                src="public/images/h-logo.png"
+                style="height: 12dvh; width: 15dvh"
+              />
+            </q-card-section>
+            <q-card-section>
+              <div class="row q-gutter-md flex justify-center full-width q-mt-none">
+                <q-btn
+                  label="Entrar"
+                  :loading="loading"
+                  color="primary"
+                  class="q-ma-md full-width"
+                  type="submit"
+                  rounded
+                  size="md"
+                  no-caps
+                />
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
+    </q-form>
   </div>
 </template>
 

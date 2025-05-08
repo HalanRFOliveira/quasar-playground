@@ -161,7 +161,7 @@
       <h2 class="col-12 text-center text-h3 text-white">
         Trabalhos e projetos
       </h2>
-      <div class="row col-12 justify-center">
+      <div class="row col-12 justify-center q-pa-md">
         <q-card
           @click="toURL('https://precificador.carflip.com.br/')"
           class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
@@ -252,7 +252,6 @@
             </span>
           </q-card-section>
         </q-card>
-
       </div>
     </div>
     <q-separator
@@ -305,6 +304,52 @@
       inset
       class="q-ma-xl"
     />
+    <div class="text-center">
+      <h2 class="q-pa-md col-12 text-h3 text-white">
+        Aprenda junto comigo
+      </h2>
+      <span class="col-12 text-white">
+        Projetos de código aberto
+      </span>
+      <div class="row wrap flex-center">
+        <div class="row col-12 justify-center q-pa-md">
+          <q-card
+            v-for="repo in repos"
+            :key="repo.id"
+            @click="toURL(repo.html_url)"
+            class="q-ma-sm cursor-pointer col-md-3 col-sm-12 row"
+            flat
+            dark
+            bordered
+          >
+            <q-card-section class="row">
+              <div class="text-h6">{{ repo.name }}</div>
+              <span class="text-caption text-grey col-12 text-left">
+                {{ repo.description ?? "Projeto sem descrição" }}
+              </span>
+              <span class="row text-center q-my-md col-12 text-caption text-grey">
+                <q-badge
+                  outline
+                  class="q-mx-sm"
+                  color="teal"
+                >{{ repo.language }}</q-badge>
+                <q-badge
+                v-if="repo.is_template"
+                  outline
+                  class="q-mx-sm"
+                  color="teal"
+                >Template</q-badge>
+              </span>
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
+    </div>
+    <q-separator
+      dark
+      inset
+      class="q-ma-xl"
+    />
     <div class="row q-pb-md text-center justify-center">
       <h2 class="col-12 text-h3 text-white">Vamos Conversar!</h2>
       <div class="q-pb-xl">
@@ -334,24 +379,20 @@
   </q-page>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script setup>
+import { defineComponent, onMounted, ref } from "vue";
 import { openURL } from 'quasar'
+import GithubApi from "src/services/githubapiservice";
+const repos = ref([]);
+onMounted(() => {
+  GithubApi.repos.getAllPublicRepos()
+    .then((resp) => repos.value = resp);
+})
 
+const toURL = (url) => {
+  openURL(url);
 
-export default defineComponent({
-  name: "IndexPage",
-  setup() {
-    const toURL = (url) => {
-      openURL(url);
-
-    };
-
-    return {
-      toURL
-    }
-  },
-});
+};
 </script>
 
 <style scoped>
