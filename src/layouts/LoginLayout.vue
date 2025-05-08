@@ -13,7 +13,7 @@
               alt="Halan Logo"
             />
           </q-avatar>
-          <div class="text-caption"> {{ formatDate(date, "DD/MM/YYYY - hh:mm:ss") }}</div>
+          <div class="text-caption"> {{ formatDate(date, "DD/MM/YYYY - HH:mm:ss") }}</div>
         </div>
       </q-toolbar>
     </q-header>
