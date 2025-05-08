@@ -9,7 +9,7 @@
           >
             <q-card-section class="flex flex-center">
               <q-img
-                src="public/images/h-logo.png"
+                src="images/h-logo.png"
                 style="height: 12dvh; width: 15dvh"
               />
             </q-card-section>
